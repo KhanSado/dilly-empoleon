@@ -1,0 +1,20 @@
+<form (ngSubmit)="submit()" [formGroup]="authorForm" #formDir = "ngForm">
+  <div class="form-group">
+    <label for="name: ">name</label>
+    <input type="text" placeholder="Name" formControlName="name" requeired/>
+  </div>
+  <div *ngIf="name.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="name.errors?.['required']"> O name é obrigatório</p>
+  </div>
+
+
+  <div class="form-group">
+    <label for="Sobrenome: ">Sobrenome</label>
+    <input type="text" placeholder="Sobrenome" formControlName="lastname" requeired>
+  </div>
+  <div *ngIf="lastname.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="lastname.errors?.['required']"> O lastname é obrigatório</p>
+  </div>
+
+  <input type="submit" value="{{ btnText }}">
+</form>

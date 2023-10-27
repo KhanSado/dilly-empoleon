@@ -14,6 +14,7 @@ export class AuthorsComponent implements OnInit{
 
   authors: Author[] = []
   allAuthors: Author[] = []
+  btnText = 'Novo'
 
   constructor(private authorService: AuthorService, private router: Router){}
 
@@ -25,20 +26,5 @@ export class AuthorsComponent implements OnInit{
 
         console.log(this.allAuthors);
     })
-  }
-
-
-  async createHandler(author: Author){
-
-    const authorPayload = {
-      "name": author.name,
-      "lastname": author.lastname
-    };
-
-    this.authorService.saveAuthor(authorPayload).subscribe(
-      (response: any) => {
-        this.router.navigate(["/authors"])
-      }
-    )
   }
 }

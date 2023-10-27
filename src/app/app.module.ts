@@ -16,6 +16,8 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { RegisterUserFormComponent } from './components/register-user-form/register-user-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { AuthorsComponent } from './components/pages/authors/authors.component';
+import { AuthorFormComponent } from './components/author-form/author-form.component';
+import { AddAuthorComponent } from './components/pages/authors/add-author/add-author.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,10 @@ import { AuthorsComponent } from './components/pages/authors/authors.component';
     RegisterComponent,
     RegisterUserFormComponent,
     LoginFormComponent,
-    AuthorsComponent
-  ],
+    AuthorsComponent,
+    AuthorFormComponent,
+    AddAuthorComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
