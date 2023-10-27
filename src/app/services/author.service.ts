@@ -29,4 +29,8 @@ export class AuthorService {
   getAuthors(): Observable<any>{
     return this.http.get(this.apiUrlAuthor, this.httpOptions)
   }
+
+  saveAuthor(author: Author): Observable<Author>{
+    return this.http.post<Author>(this.apiUrlAuthor, author, this.httpOptions)
+}
 }
