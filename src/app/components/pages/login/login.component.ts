@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
     this.userService.login(userLoginPayload).subscribe(
       (response: any) => {
         const token = response.result.token;
-        sessionStorage.setItem('x-dilly-token', token)
+        sessionStorage.setItem('x-dilly-token', `Bearer ${token}`)
         this.router.navigate(["/home"])
       }
     )
