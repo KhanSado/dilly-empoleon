@@ -1,1 +1,6 @@
-<p>login works!</p>
+<h1>Vamos entrar para ganhar</h1>
+
+<app-login-form
+  [btnText] = "btnText"
+  (onSubmit)="loginHandler($event)">
+</app-login-form>

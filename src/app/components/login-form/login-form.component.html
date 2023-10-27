@@ -1,0 +1,19 @@
+<form (ngSubmit)="submit()" [formGroup]="loginForm" #formDir = "ngForm">
+  <div class="form-group">
+    <label for="username: ">Username</label>
+    <input type="text" placeholder="Username" formControlName="username" requeired/>
+  </div>
+  <div *ngIf="username.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="username.errors?.['required']"> O Username é obrigatório</p>
+  </div>
+
+  <div class="form-group">
+    <label for="Senha: ">Senha</label>
+    <input type="password" placeholder="Senha" formControlName="password"  requeired>
+  </div>
+  <div *ngIf="password.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="password.errors?.['required']"> A senha é obrigatório</p>
+  </div>
+
+  <input type="submit" value="{{ btnText }}">
+</form>
