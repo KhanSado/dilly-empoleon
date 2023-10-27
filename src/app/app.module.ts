@@ -18,6 +18,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { AuthorsComponent } from './components/pages/authors/authors.component';
 import { AuthorFormComponent } from './components/author-form/author-form.component';
 import { AddAuthorComponent } from './components/pages/authors/add-author/add-author.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AddAuthorComponent } from './components/pages/authors/add-author/add-au
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
