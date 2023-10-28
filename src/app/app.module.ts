@@ -20,6 +20,9 @@ import { AuthorFormComponent } from './components/author-form/author-form.compon
 import { AddAuthorComponent } from './components/pages/authors/add-author/add-author.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
+import { GenderComponent } from './components/pages/gender/gender.component';
+import { AddGenderComponent } from './components/pages/gender/add-gender/add-gender.component';
+import { GenderFormComponent } from './components/gender-form/gender-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { JwtModule } from '@auth0/angular-jwt';
     LoginFormComponent,
     AuthorsComponent,
     AuthorFormComponent,
-    AddAuthorComponent
+    AddAuthorComponent,
+    GenderComponent,
+    AddGenderComponent,
+    GenderFormComponent
     ],
   imports: [
     BrowserModule,

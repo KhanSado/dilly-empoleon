@@ -9,6 +9,7 @@
         <a class="nav-link" routerLink="/" *ngIf="!isTokenValid()" >Login</a>
         <a class="nav-link" routerLink="/user/register" *ngIf="!isTokenValid()">Criar Conta</a>
         <a class="nav-link" routerLink="/authors" *ngIf="isTokenValid()">Autores</a>
+        <a class="nav-link" routerLink="/genders" *ngIf="isTokenValid()">Gêneros Literários</a>
         <a class="nav-link" routerLink="/about">Sobre</a>
       </div>
     </div>
