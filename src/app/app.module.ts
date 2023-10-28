@@ -19,6 +19,7 @@ import { AuthorsComponent } from './components/pages/authors/authors.component';
 import { AuthorFormComponent } from './components/author-form/author-form.component';
 import { AddAuthorComponent } from './components/pages/authors/add-author/add-author.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return sessionStorage.getItem('x-dilly-token');
+        },
+      },
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,9 +6,9 @@
     </button>
     <div class="collapse navbar-collapse d-flex ml-auto" id="navbarNavAltMarkup">
       <div class="navbar-nav d-flex">
-        <a class="nav-link" routerLink="/">Login</a>
-        <a class="nav-link" routerLink="/user/register">Criar Conta</a>
-        <a class="nav-link" routerLink="/authors">Autores</a>
+        <a class="nav-link" routerLink="/" *ngIf="!isTokenValid()" >Login</a>
+        <a class="nav-link" routerLink="/user/register" *ngIf="!isTokenValid()">Criar Conta</a>
+        <a class="nav-link" routerLink="/authors" *ngIf="isTokenValid()">Autores</a>
         <a class="nav-link" routerLink="/about">Sobre</a>
       </div>
     </div>
