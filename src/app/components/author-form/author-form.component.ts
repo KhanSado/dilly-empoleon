@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Author } from 'src/app/Author';
 import { User } from 'src/app/User';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-author-form',
   templateUrl: './author-form.component.html',
@@ -37,6 +37,11 @@ export class AuthorFormComponent implements OnInit {
       return;
     }
     console.log(this.authorForm.value);
+    Swal.fire({
+      title: 'Novo Auto',
+      text: 'Novo Autor adicionado com sucesso.',
+      icon: 'success'
+    });
     this.onSubmit.emit(this.authorForm.value)
   }
 

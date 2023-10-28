@@ -1,7 +1,22 @@
 <div class="home-container">
   <h1> Seus Autores </h1>
+  <button type="button" class="btn btn-primary" routerLink="/authors/new">Novo Autor</button>
 
-  <div *ngFor="let author of authors">
-      <h2>{{author.name}} {{author.lastname}}</h2>
-  </div>
+    <table table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+        <tbody class="table-striped">
+          <tr  *ngFor="let author of authors">
+            <th scope="row">{{author.id}}</th>
+            <td>{{author.name}}</td>
+            <td>{{author.lastname}}</td>
+            <td></td>
+        </tbody>
+    </table>
 </div>

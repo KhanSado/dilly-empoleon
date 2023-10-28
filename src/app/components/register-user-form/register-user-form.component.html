@@ -1,38 +1,40 @@
 <form (ngSubmit)="submit()" [formGroup]="userForm" #formDir = "ngForm">
-  <div class="form-group ">
-    <label for="username: ">Username</label>
-    <input type="text" placeholder="Username" formControlName="username" requeired/>
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+    <input type="text" placeholder="Username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" formControlName="username" requeired/>
   </div>
   <div *ngIf="username.invalid && formDir.submitted" class="validation-error">
     <p *ngIf="username.errors?.['required']"> O Username é obrigatório</p>
   </div>
 
 
-  <div class="form-group">
-    <label for="name: ">Seu nome</label>
-    <input type="text" placeholder="Name" formControlName="name" requeired>
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Seu nome</span>
+    <input type="text" placeholder="Name" formControlName="name"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  requeired>
   </div>
   <div *ngIf="name.invalid && formDir.submitted" class="validation-error">
     <p *ngIf="name.errors?.['required']"> O Nome é obrigatório</p>
   </div>
 
 
-  <div class="form-group">
-    <label for="email: ">Email</label>
-    <input type="email" placeholder="Email" formControlName="email" requeired>
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Melhor email</span>
+    <input type="email" placeholder="Email" formControlName="email"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  requeired>
   </div>
   <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
     <p *ngIf="email.errors?.['required']"> O email é obrigatório</p>
   </div>
 
 
-  <div class="form-group">
-    <label for="Senha: ">Senha</label>
-    <input type="password" placeholder="Senha" formControlName="password"  requeired>
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+    <input type="password" placeholder="Senha" formControlName="password"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  requeired>
   </div>
   <div *ngIf="password.invalid && formDir.submitted" class="validation-error">
     <p *ngIf="password.errors?.['required']"> A senha é obrigatório</p>
   </div>
 
-  <input type="submit" class="btn btn-primary" value="{{ btnText }}">
+  <div class="d-grid gap-2">
+    <input type="submit" class="btn btn-primary" value="{{ btnText }}">
+  </div>
 </form>
