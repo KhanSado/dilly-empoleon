@@ -19,15 +19,19 @@ export class AddBookComponent implements OnInit{
   }
 
 
-  async createHandler(book: Book){
+  async createHandler(data: { book: Book, authorId: number, genderId: number }){
 
     const bookPayload = {
-      "title": book.title,
-      "subtitle": book.subtitle,
-      "sumary": book.sumary
+      "title": data.book.title,
+      "subtitle": data.book.subtitle,
+      "sumary": data.book.sumary
     };
 
-    this.bookService.saveBooks(bookPayload, 1, 5).subscribe(
+    const books1 = data.book;
+    const authorId1 = data.authorId;
+    const genderId1 = data.genderId;
+
+    this.bookService.saveBooks(bookPayload, authorId1, genderId1).subscribe(
       (response: any) => {
         this.router.navigate(["/books"])
       }
