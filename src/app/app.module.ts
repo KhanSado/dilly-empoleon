@@ -23,6 +23,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { GenderComponent } from './components/pages/gender/gender.component';
 import { AddGenderComponent } from './components/pages/gender/add-gender/add-gender.component';
 import { GenderFormComponent } from './components/gender-form/gender-form.component';
+import { BooksComponent } from './components/pages/books/books.component';
+import { AddBookComponent } from './components/pages/books/add-book/add-book.component';
+import { BookFormComponent } from './components/book-form/book-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { GenderFormComponent } from './components/gender-form/gender-form.compon
     AddAuthorComponent,
     GenderComponent,
     AddGenderComponent,
-    GenderFormComponent
+    GenderFormComponent,
+    BooksComponent,
+    AddBookComponent,
+    BookFormComponent
     ],
   imports: [
     BrowserModule,

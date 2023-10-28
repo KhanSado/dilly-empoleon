@@ -1,0 +1,28 @@
+<form (ngSubmit)="submit()" [formGroup]="bookForm" #formDir = "ngForm">
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+    <input type="text" placeholder="Title" formControlName="title"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired/>
+  </div>
+  <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="title.errors?.['required']"> O title é obrigatório</p>
+  </div>
+
+
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Subtitle</span>
+    <input type="text" placeholder="Subtitle" formControlName="subtitle"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired>
+  </div>
+  <div *ngIf="subtitle.invalid && formDir.submitted" class="validation-error">
+  </div>
+
+  <div class="form-group input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Sumary</span>
+    <input type="text" placeholder="Sumary" formControlName="sumary"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired>
+  </div>
+  <div *ngIf="sumary.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="sumary.errors?.['required']"> O sumary é obrigatório</p>
+  </div>
+
+  <div class="d-grid gap-2">
+    <input type="submit" class="btn btn-primary" value="{{ btnText }}">
+  </div></form>

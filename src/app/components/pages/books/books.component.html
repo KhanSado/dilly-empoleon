@@ -1,0 +1,22 @@
+<div class="home-container">
+  <h1> Minha Biblioteca </h1>
+  <button type="button" class="btn btn-primary" routerLink="/books/new">Novo Livro</button>
+
+    <table table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Subtitle</th>
+          <th scope="col">Sumary</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+        <tbody class="table-striped">
+          <tr  *ngFor="let book of books">
+            <td>{{book.title}}</td>
+            <td>{{book.subtitle}}</td>
+            <td>{{book.sumary}}</td>
+            <td></td>
+        </tbody>
+    </table>
+</div>

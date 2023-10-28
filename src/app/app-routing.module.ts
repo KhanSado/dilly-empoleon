@@ -8,6 +8,8 @@ import { AuthorsComponent } from './components/pages/authors/authors.component';
 import { AddAuthorComponent } from './components/pages/authors/add-author/add-author.component';
 import { GenderComponent } from './components/pages/gender/gender.component';
 import { AddGenderComponent } from './components/pages/gender/add-gender/add-gender.component';
+import { BooksComponent } from './components/pages/books/books.component';
+import { AddBookComponent } from './components/pages/books/add-book/add-book.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'authors', component: AuthorsComponent},
   {path: 'authors/new', component: AddAuthorComponent},
   {path: 'genders', component: GenderComponent},
-  {path: 'genders/new', component: AddGenderComponent}
+  {path: 'genders/new', component: AddGenderComponent},
+  {path: 'books', component: BooksComponent},
+  {path: 'books/new', component: AddBookComponent}
 ];
 
 @NgModule({

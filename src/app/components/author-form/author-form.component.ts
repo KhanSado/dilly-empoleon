@@ -26,7 +26,7 @@ export class AuthorFormComponent implements OnInit {
   }
 
   get lastname() {
-    return this.authorForm.get('username')!
+    return this.authorForm.get('lastname')!
   }
   get name() {
     return this.authorForm.get('name')!
