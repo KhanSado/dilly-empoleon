@@ -26,6 +26,7 @@ import { GenderFormComponent } from './components/gender-form/gender-form.compon
 import { BooksComponent } from './components/pages/books/books.component';
 import { AddBookComponent } from './components/pages/books/add-book/add-book.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { BookFormComponent } from './components/book-form/book-form.component';
           return sessionStorage.getItem('x-dilly-token');
         },
       },
-    })
+    }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
