@@ -17,7 +17,9 @@
             <td>{{book.subtitle}}</td>
             <td>{{book.sumary}}</td>
             <td>
-              <fa-icon [icon]="trashIcon"></fa-icon>
+              <a (click)="deleteBook"> Excluir </a> 
+              |
+              <a> Editar </a>
             </td>
         </tbody>
     </table>

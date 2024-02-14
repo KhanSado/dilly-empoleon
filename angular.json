@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dilly-empoleon:build:production"
+              "buildTarget": "dilly-empoleon:build:production"
             },
             "development": {
-              "browserTarget": "dilly-empoleon:build:development"
+              "buildTarget": "dilly-empoleon:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dilly-empoleon:build"
+            "buildTarget": "dilly-empoleon:build"
           }
         },
         "test": {
