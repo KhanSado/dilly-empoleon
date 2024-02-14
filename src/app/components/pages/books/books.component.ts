@@ -32,8 +32,11 @@ export class BooksComponent implements OnInit{
     })
   }
 
-  deleteBook(){
-    console.log("DELETE BOOK");
+  async deleteBook(bookId?: string){
+    this.bookService.deleteBook(bookId).subscribe((item) => {
+      console.log(item);
+      this.ngOnInit()
+    })
   }
 
   editBook(){

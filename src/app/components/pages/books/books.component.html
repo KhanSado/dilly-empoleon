@@ -17,9 +17,9 @@
             <td>{{book.subtitle}}</td>
             <td>{{book.sumary}}</td>
             <td>
-              <a (click)="deleteBook"> Excluir </a> 
+              <a (click)="deleteBook(book.id)"> Excluir </a> 
               |
-              <a> Editar </a>
+              <a (click)="editBook()"> Editar </a>
             </td>
         </tbody>
     </table>
