@@ -11,6 +11,7 @@
         <a class="nav-link" routerLink="/books" *ngIf="isTokenValid()">Livros</a>
         <a class="nav-link" routerLink="/authors" *ngIf="isTokenValid()">Autores</a>
         <a class="nav-link" routerLink="/genders" *ngIf="isTokenValid()">Gêneros Literários</a>
+        <a class="nav-link" routerLink="/publishers-company" *ngIf="isTokenValid()">Editoras</a>
         <a class="nav-link" routerLink="/about">Sobre</a>
         <a class="nav-link" (click)="logout()" *ngIf="isTokenValid()">Sair</a>
       </div>

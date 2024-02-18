@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Author } from 'src/app/Author';
 import { Gender } from 'src/app/Gender';
 import Swal from 'sweetalert2';
 

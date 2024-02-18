@@ -27,6 +27,9 @@ import { BooksComponent } from './components/pages/books/books.component';
 import { AddBookComponent } from './components/pages/books/add-book/add-book.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PublisherCompanyComponent } from './components/pages/publisher-company/publisher-company.component';
+import { AddPublisherComponent } from './components/pages/publisher-company/add-publisher/add-publisher.component';
+import { PublisherFormComponent } from './components/publisher-form/publisher-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     GenderFormComponent,
     BooksComponent,
     AddBookComponent,
-    BookFormComponent
+    BookFormComponent,
+    PublisherCompanyComponent,
+    AddPublisherComponent,
+    PublisherFormComponent,
+    PublisherFormComponent
     ],
   imports: [
     BrowserModule,

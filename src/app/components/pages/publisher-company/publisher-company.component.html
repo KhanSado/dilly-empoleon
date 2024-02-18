@@ -1,0 +1,19 @@
+<div class="home-container">
+    <h1> Minha Editoras </h1>
+    <button type="button" class="btn btn-primary" routerLink="/publishers-company/new">Nova Editora</button>
+  
+      <table table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+          <tbody class="table-striped">
+            <tr  *ngFor="let gender of publishers">
+              <td>{{gender.name}}</td>
+              <td></td>
+          </tbody>
+      </table>
+  </div>
+  
