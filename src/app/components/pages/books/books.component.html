@@ -7,6 +7,9 @@
         <tr>
           <th scope="col">Title</th>
           <th scope="col">Subtitle</th>
+          <th scope="col">Author</th>
+          <th scope="col">Gênero</th>
+          <th scope="col">Editora</th>
           <th scope="col">Sumary</th>
           <th scope="col">Actions</th>
         </tr>
@@ -14,6 +17,9 @@
         <tbody class="table-striped">
           <tr  *ngFor="let book of books">
             <td>{{book.title}}</td>
+            <td>{{book.subtitle}}</td>
+            <td>{{book.author?.name}}</td>
+            <td>{{book.subtitle}}</td>
             <td>{{book.subtitle}}</td>
             <td>{{book.sumary}}</td>
             <td>

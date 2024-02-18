@@ -3,8 +3,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Author } from 'src/app/Author';
 import { Book } from 'src/app/Book';
 import { Gender } from 'src/app/Gender';
+import { PublisherCompany } from 'src/app/puublisherCompany';
 import { AuthorService } from 'src/app/services/author.service';
 import { GenderService } from 'src/app/services/gender.service';
+import { PublisherCompanyService } from 'src/app/services/publisher-company.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,7 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class BookFormComponent implements OnInit {
 
-  @Output() onSubmit = new EventEmitter<{ book: Book, authorId: number, genderId: number }>();
+  @Output() onSubmit = new EventEmitter<{ book: Book, authorId: string, genderId: string, publisherCompanyId: string}>();
   @Input() btnText!: String;
 
   bookForm!: FormGroup
@@ -26,7 +28,10 @@ export class BookFormComponent implements OnInit {
   genders: Gender[] = []
   allGenders: Gender[] = []
 
-  constructor(private authorService: AuthorService, private genderService: GenderService) {}
+  publishers: PublisherCompany[] = []
+  allPublishers: PublisherCompany[] = []
+
+  constructor(private authorService: AuthorService, private genderService: GenderService, private publisherService: PublisherCompanyService) {}
 
   ngOnInit(): void {
     this.bookForm = new FormGroup({
@@ -35,11 +40,13 @@ export class BookFormComponent implements OnInit {
       subtitle: new FormControl(''),
       sumary: new FormControl('', [Validators.required]),
       author: new FormControl('', [Validators.required]),
-      gender: new FormControl('', [Validators.required])
+      gender: new FormControl('', [Validators.required]),
+      publisher: new FormControl('', [Validators.required])
     })
 
     this.getAutors()
     this.getGender()
+    this.getPublishers()
   }
 
   get title() {
@@ -57,6 +64,9 @@ export class BookFormComponent implements OnInit {
   get gender() {
     return this.bookForm.get('gender')!
   }
+  get publisher() {
+    return this.bookForm.get('publisher')!
+  }
 
   submit(){
     if(this.bookForm.invalid){
@@ -71,11 +81,12 @@ export class BookFormComponent implements OnInit {
       const bookData = this.bookForm.value;
       const authorId = this.author.value;
       const genderId = this.gender.value;
+      const publisherCompanyId = this.publisher.value
 
-      console.log(`Authorid ${authorId} --- genderId ${genderId}`);
+      console.log(`Authorid ${authorId} --- genderId ${genderId} --- publisher ${publisherCompanyId}`);
 
 
-      const data = { book: bookData, authorId, genderId };
+      const data = { book: bookData, authorId, genderId, publisherCompanyId};
 
     this.onSubmit.emit(data)
   }
@@ -93,6 +104,14 @@ export class BookFormComponent implements OnInit {
       this.allGenders = items
       this.genders = items
       console.log(this.allGenders);
+  })
+  }
+
+  getPublishers(){
+    this.publisherService.getPublisher().subscribe((items) => {
+      this.allPublishers = items
+      this.publishers = items
+      console.log(this.allPublishers);
   })
   }
 }

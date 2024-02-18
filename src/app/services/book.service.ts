@@ -28,10 +28,11 @@ export class BookService {
     return this.http.get(this.apiUrlBooks, this.httpOptions)
   }
 
-  saveBooks(book: Book, authorId: number, genderId: number): Observable<Book>{
+  saveBooks(book: Book, authorId: string, genderId: string, publisherCompanyId: string): Observable<Book>{
     let params = new HttpParams()
     .set('authorId', authorId)
-    .set('genderId', genderId);
+    .set('genderId', genderId)
+    .set('publisherCompanyId', publisherCompanyId);
 
     let headers = new HttpHeaders()
     .set('Authorization', `${this.token}`);
