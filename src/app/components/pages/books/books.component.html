@@ -34,3 +34,19 @@
         </tbody>
     </table>
 </div>
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" (click)="getBook(resources.prevPage)" aria-label="Previous" *ngIf="resources.prevPage != null">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li *ngFor="let number of range(1, resources.qtdPages)" class="page-item"><a class="page-link" (click)="getBook">{{number}}</a></li>
+    <li class="page-item">
+      <a class="page-link" (click)="getBook(resources.nextPage, resources.qtdBooks, resources.qtdPages)" aria-label="Next" *ngIf="resources.nextPage != null">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -24,8 +24,8 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<any>{
-    return this.http.get(this.apiUrlBooks, this.httpOptions)
+  getBooks(url: string = this.apiUrlBooks): Observable<any>{
+    return this.http.get(url, this.httpOptions)
   }
 
   saveBooks(book: Book, authorId: string, genderId: string, publisherCompanyId: string): Observable<Book>{
