@@ -1,3 +1,7 @@
+import { Author } from "./Author";
+import { Gender } from "./Gender";
+import { PublisherCompany } from "./puublisherCompany";
+
 export interface Book {
   id?: string,
   title: string,
@@ -7,5 +11,8 @@ export interface Book {
   qtdPages: Number,
   qtdRead: Number, 
   lastRead: Date,
-  sumary: string
+  sumary: string,
+  author?: Author,
+  gender?: Gender,
+  publisherCompany?: PublisherCompany
 }

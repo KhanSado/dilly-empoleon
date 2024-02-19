@@ -10,6 +10,8 @@
           <th scope="col">Author</th>
           <th scope="col">Gênero</th>
           <th scope="col">Editora</th>
+          <th scope="col">Lendo</th>
+          <th scope="col">Lido</th>
           <th scope="col">Sumary</th>
           <th scope="col">Actions</th>
         </tr>
@@ -18,9 +20,11 @@
           <tr  *ngFor="let book of books">
             <td>{{book.title}}</td>
             <td>{{book.subtitle}}</td>
-            <td>{{book.subtitle}}</td>
-            <td>{{book.subtitle}}</td>
-            <td>{{book.subtitle}}</td>
+            <td>{{book.author?.name}} {{book.author?.lastname}}</td>
+            <td>{{book.gender?.name}}</td>
+            <td>{{book.publisherCompany?.name}}</td>
+            <td>{{book.isReading}}</td>
+            <td>{{book.readed}}</td>
             <td>{{book.sumary}}</td>
             <td>
               <a (click)="deleteBook(book.id)"> Excluir </a> 

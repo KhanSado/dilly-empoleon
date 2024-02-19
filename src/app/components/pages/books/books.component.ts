@@ -28,8 +28,9 @@ export class BooksComponent implements OnInit{
         this.allBooks = items
         this.books = items
 
+        
         console.log(this.books);
-    })
+      })
   }
 
   async deleteBook(bookId?: string){
