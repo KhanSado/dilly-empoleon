@@ -41,7 +41,11 @@ export class BookFormComponent implements OnInit {
       sumary: new FormControl('', [Validators.required]),
       author: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
-      publisher: new FormControl('', [Validators.required])
+      publisher: new FormControl('', [Validators.required]),
+      readed: new FormControl(''),
+      isReading: new FormControl(''),
+      qtdPages: new FormControl(''),
+      qtdRead: new FormControl('')
     })
 
     this.getAutors()
@@ -66,6 +70,18 @@ export class BookFormComponent implements OnInit {
   }
   get publisher() {
     return this.bookForm.get('publisher')!
+  }
+  get readed() {
+    return Boolean(this.bookForm.get('readed')!.value)
+  }
+  get isReading() {
+    return Boolean(this.bookForm.get('isReading')!.value)
+  }
+  get qtdPages() {
+    return Number(this.bookForm.get('qtdPages')!)
+  }
+  get qtdRead() {
+    return Number(this.bookForm.get('qtdRead')!)
   }
 
   submit(){

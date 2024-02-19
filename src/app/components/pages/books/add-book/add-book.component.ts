@@ -24,12 +24,14 @@ export class AddBookComponent implements OnInit{
     const bookPayload = {
       "title": data.book.title,
       "subtitle": data.book.subtitle,
-      "isReading": false,
-      "readed": false,
+      "isReading": data.book.isReading,
+      "readed": data.book.readed,
+      "qtdPages": data.book.qtdPages,
+      "qtdRead": data.book.qtdRead, 
+      "lastRead": "2023-12-11T10:55:15-03:00",// new Date().toLocaleDateString(), //TODO: MUDAR PARA PEGAR DATA DO USUÁRIO, DATEPICKER
       "sumary": data.book.sumary
     };
 
-    const books1 = data.book;
     const authorId1 = data.authorId;
     const genderId1 = data.genderId;
     const publisherCompanyId1 = data.publisherCompanyId

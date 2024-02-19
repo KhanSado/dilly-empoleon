@@ -6,5 +6,8 @@ export interface Book {
   subtitle?: string,
   isReading: Boolean,
   readed: Boolean,
+  qtdPages: Number,
+  qtdRead: Number, 
+  lastRead: string,
   sumary: string
 }
