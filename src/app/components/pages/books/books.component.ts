@@ -42,7 +42,6 @@ export class BooksComponent implements OnInit{
   }
 
   async getBook(apiUrlBooks: string = `${this.apiUrlBooks}`) {
-   
     this.bookService.getBooks(apiUrlBooks).subscribe((items) => {
       this.allBooks = items.result.books
       this.books = items.result.books
