@@ -44,7 +44,7 @@
     </li>
     <li *ngFor="let number of range(1, resources.qtdPages)" class="page-item"><a class="page-link" (click)="getBook">{{number}}</a></li>
     <li class="page-item">
-      <a class="page-link" (click)="getBook(resources.nextPage, resources.qtdBooks, resources.qtdPages)" aria-label="Next" *ngIf="resources.nextPage != null">
+      <a class="page-link" (click)="getBook(resources.nextPage)" aria-label="Next" *ngIf="resources.nextPage != null">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
