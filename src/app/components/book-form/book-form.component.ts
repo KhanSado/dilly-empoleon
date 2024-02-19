@@ -45,7 +45,8 @@ export class BookFormComponent implements OnInit {
       readed: new FormControl(''),
       isReading: new FormControl(''),
       qtdPages: new FormControl(''),
-      qtdRead: new FormControl('')
+      qtdRead: new FormControl(''),
+      lastRead: new FormControl('')
     })
 
     this.getAutors()
@@ -82,6 +83,9 @@ export class BookFormComponent implements OnInit {
   }
   get qtdRead() {
     return Number(this.bookForm.get('qtdRead')!)
+  }
+  get lastRead() {
+    return this.bookForm.get('lastRead')!
   }
 
   submit(){

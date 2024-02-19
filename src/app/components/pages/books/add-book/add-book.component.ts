@@ -28,7 +28,7 @@ export class AddBookComponent implements OnInit{
       "readed": data.book.readed,
       "qtdPages": data.book.qtdPages,
       "qtdRead": data.book.qtdRead, 
-      "lastRead": "2023-12-11T10:55:15-03:00",// new Date().toLocaleDateString(), //TODO: MUDAR PARA PEGAR DATA DO USUÁRIO, DATEPICKER
+      "lastRead": new Date(data.book.lastRead), //new Date().toISOString(),// new Date().toLocaleDateString(), //TODO: MUDAR PARA PEGAR DATA DO USUÁRIO, DATEPICKER
       "sumary": data.book.sumary
     };
 

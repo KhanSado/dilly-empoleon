@@ -1,5 +1,3 @@
-import { Author } from "./Author"
-
 export interface Book {
   id?: string,
   title: string,
@@ -8,6 +6,6 @@ export interface Book {
   readed: Boolean,
   qtdPages: Number,
   qtdRead: Number, 
-  lastRead: string,
+  lastRead: Date,
   sumary: string
 }
