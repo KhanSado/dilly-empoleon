@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseApiUrl: 'https://lizard-x7ky.onrender.com/'
+  baseApiUrl: 'http://localhost:3000/'
 };
