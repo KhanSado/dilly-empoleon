@@ -1,0 +1,25 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      <div class="card my-5">
+        <div class="card-body">
+          <a href="#" class="d-flex justify-content-center">
+            <img src="../../../../../assets/images/icon.png" />
+          </a>
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <div class="auth-header">
+                <h2 class="text-secondary mt-5"><b>Olá, bem vindo</b></h2>
+              </div>
+            </div>
+          </div>
+
+          <app-login-form
+          [btnText] = "'entrar'"
+          (onSubmit)="loginHandler($event)">
+        </app-login-form>
+           
+      </div>
+    </div>
+  </div>
+</div>

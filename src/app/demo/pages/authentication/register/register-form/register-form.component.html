@@ -1,0 +1,38 @@
+<form class="card-body" (ngSubmit)="submit()" [formGroup]="userForm" #formDir = "ngForm">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" formControlName="username" placeholder="usuario" />
+          <label for="floatingInput">usuário</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" formControlName="name" placeholder="nome" />
+          <label for="floatingInput">nome</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="name@example.com" />
+      <label for="floatingInput">email</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" formControlName="password" placeholder="senha" />
+      <label for="floatingInput">senha</label>
+    </div>
+    <div class="form-check mt-3s">
+      <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked="" />
+      <label class="form-check-label" for="customCheckc1">
+        <h5>Aceito os <span>termos & condições.</span></h5>
+      </label>
+    </div>
+    <div class="d-grid mt-4">
+        <input type="submit" class="btn btn-secondary" value="{{ btnText }}">
+    </div>
+    <hr />
+    <h5 class="d-flex justify-content-center">
+      <a routerLink="/">já tenho conta</a>
+    </h5>
+    </form>

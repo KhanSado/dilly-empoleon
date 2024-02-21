@@ -1,0 +1,28 @@
+<form class="d-grid" (ngSubmit)="submit()" [formGroup]="loginForm" #formDir = "ngForm">
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="username" formControlName="username" />
+      <label for="floatingInput">usuário</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="password" formControlName="password" />
+      <label for="password">senha</label>
+    </div>
+    <div class="d-flex mt-1 justify-content-between">
+      <div class="form-check">
+        <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked="" />
+        <label class="form-check-label text-muted" for="customCheckc1">lembrar de mim</label>
+      </div>
+      <h5 class="text-secondary">
+        <a href="javascript:">esqueceu a senha?</a>
+      </h5>
+    </div>
+    <hr />
+    <h5 class="d-flex justify-content-center">
+      <a routerLink="/register">sou novo por aqui</a>
+    </h5>
+
+    <div class="d-grid mt-4">
+        <input type="submit" class="btn btn-secondary" value="{{ btnText }}">
+    </div>
+  </form>

@@ -1,35 +1,100 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/pages/login/login.component';
-import { RegisterComponent } from './components/pages/register/register.component';
-import { HomeComponent } from './components/pages/home/home.component';
-import { AboutComponent } from './components/pages/about/about.component';
-import { AuthorsComponent } from './components/pages/authors/authors.component';
-import { AddAuthorComponent } from './components/pages/authors/add-author/add-author.component';
-import { GenderComponent } from './components/pages/gender/gender.component';
-import { AddGenderComponent } from './components/pages/gender/add-gender/add-gender.component';
-import { BooksComponent } from './components/pages/books/books.component';
-import { AddBookComponent } from './components/pages/books/add-book/add-book.component';
-import { PublisherCompanyComponent } from './components/pages/publisher-company/publisher-company.component';
-import { AddPublisherComponent } from './components/pages/publisher-company/add-publisher/add-publisher.component';
+import { AdminComponent } from './theme/layout/admin/admin.component';
+import { GuestComponent } from './theme/layout/guest/guest.component';
+import { HomeComponent } from './demo/pages/internal/home/home.component';
+import { BooksComponent } from './demo/pages/internal/books/books.component';
+import { AuthorsComponent } from './demo/pages/internal/authors/authors.component';
+import { GenderComponent } from './demo/pages/internal/gender/gender.component';
+import { PublisherComponent } from './demo/pages/internal/publisher/publisher.component';
+import { ProfileComponent } from './demo/pages/internal/profile/profile.component';
+
+
+const loadHome: () => Promise<typeof HomeComponent> = () =>
+  import('./demo/pages/internal/home/home.component').then((module) => module.HomeComponent);
+
+  const loadBooks: () => Promise<typeof BooksComponent> = () =>
+  import('./demo/pages/internal/books/books.component').then((module) => module.BooksComponent);
+  
+  const loadAuthors: () => Promise<typeof AuthorsComponent> = () =>
+  import('./demo/pages/internal/authors/authors.component').then((module) => module.AuthorsComponent);
+
+  const loadGenders: () => Promise<typeof GenderComponent> = () =>
+  import('./demo/pages/internal/gender/gender.component').then((module) => module.GenderComponent);
+
+  const loadPublisher: () => Promise<typeof PublisherComponent> = () =>
+  import('./demo/pages/internal/publisher/publisher.component').then((module) => module.PublisherComponent);
+
+  const loadProfile: () => Promise<typeof ProfileComponent> = () =>
+  import('./demo/pages/internal/profile/profile.component').then((module) => module.ProfileComponent);
+
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'user/register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'authors', component: AuthorsComponent},
-  {path: 'authors/new', component: AddAuthorComponent},
-  {path: 'genders', component: GenderComponent},
-  {path: 'genders/new', component: AddGenderComponent},
-  {path: 'books', component: BooksComponent},
-  {path: 'books/new', component: AddBookComponent},
-  {path: 'publishers-company', component: PublisherCompanyComponent},
-  {path: 'publishers-company/new', component: AddPublisherComponent}
+  {
+    path: '',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'default',
+        loadComponent: () => import('./demo/default/default.component')
+      },
+      {
+        path:'home',
+        loadComponent: () => loadHome()
+      },
+      {
+        path:'books',
+        loadComponent: () => loadBooks()
+      },
+      {
+        path:'authors',
+        loadComponent: () => loadAuthors()
+      },
+      {
+        path:'genders',
+        loadComponent: () => loadGenders()
+      },
+      {
+        path:'publishers',
+        loadComponent: () => loadPublisher()
+      },
+      {
+        path:'profile',
+        loadComponent: () => loadProfile()
+      },
+      {
+        path: 'typography',
+        loadComponent: () => import('./demo/elements/typography/typography.component')
+      },
+      {
+        path: 'color',
+        loadComponent: () => import('./demo/elements/element-color/element-color.component')
+      },
+      {
+        path: 'sample-page',
+        loadComponent: () => import('./demo/sample-page/sample-page.component')
+      }
+    ]
+  },
+  {
+    path: '',
+    component: GuestComponent,
+    children: [
+      {
+        path: 'guest',
+        loadChildren: () => import('./demo/pages/authentication/authentication.module').then((m) => m.AuthenticationModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
