@@ -36,7 +36,6 @@ export class GenderFormComponent implements OnInit {
     if(this.genderForm.invalid){
       return;
     }
-    console.log(this.genderForm.value);
     Swal.fire({
       title: 'Novo Genêro Literário',
       text: 'Novo gênero literário adicionado com sucesso.',

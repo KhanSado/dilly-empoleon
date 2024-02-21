@@ -36,7 +36,6 @@ export class AuthorFormComponent implements OnInit {
     if(this.authorForm.invalid){
       return;
     }
-    console.log(this.authorForm.value);
     Swal.fire({
       title: 'Novo Auto',
       text: 'Novo Autor adicionado com sucesso.',

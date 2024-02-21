@@ -20,11 +20,8 @@ export class AuthorsComponent implements OnInit{
 
   ngOnInit(): void {
     this.authorService.getAuthors().subscribe((items) => {
-        console.log(items);
         this.allAuthors = items
         this.authors = items
-
-        console.log(this.allAuthors);
     })
   }
 }

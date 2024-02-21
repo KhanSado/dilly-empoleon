@@ -92,7 +92,6 @@ export class BookFormComponent implements OnInit {
     if(this.bookForm.invalid){
       return;
     }
-    console.log(this.bookForm.value);
     Swal.fire({
       title: 'Novo Livro',
       text: 'Novo livro adicionado com sucesso.',
@@ -103,7 +102,6 @@ export class BookFormComponent implements OnInit {
       const genderId = this.gender.value;
       const publisherCompanyId = this.publisher.value
 
-      console.log(`Authorid ${authorId} --- genderId ${genderId} --- publisher ${publisherCompanyId}`);
 
 
       const data = { book: bookData, authorId, genderId, publisherCompanyId};
@@ -116,14 +114,12 @@ export class BookFormComponent implements OnInit {
     this.authorService.getAuthors().subscribe((items) => {
       this.allAuthors = items
       this.authors = items
-      console.log(this.allAuthors);
   })
   }
   getGender(){
     this.genderService.getGenders().subscribe((items) => {
       this.allGenders = items
       this.genders = items
-      console.log(this.allGenders);
   })
   }
 
@@ -131,7 +127,6 @@ export class BookFormComponent implements OnInit {
     this.publisherService.getPublisher().subscribe((items) => {
       this.allPublishers = items
       this.publishers = items
-      console.log(this.allPublishers);
   })
   }
 }

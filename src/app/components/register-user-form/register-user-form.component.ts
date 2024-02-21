@@ -43,7 +43,6 @@ export class RegisterUserFormComponent implements OnInit {
     if(this.userForm.invalid){
       return;
     }
-    console.log(this.userForm.value);
     this.onSubmit.emit(this.userForm.value)
   }
 

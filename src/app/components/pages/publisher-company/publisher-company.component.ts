@@ -18,11 +18,8 @@ export class PublisherCompanyComponent  implements OnInit{
 
   ngOnInit(): void {
     this.publishserService.getPublisher().subscribe((items) => {
-        console.log(items);
         this.allPublishers = items
         this.publishers = items
-
-        console.log(this.publishers);
     })
   }
 }

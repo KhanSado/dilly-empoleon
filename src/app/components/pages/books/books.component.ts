@@ -46,18 +46,15 @@ export class BooksComponent implements OnInit{
       this.allBooks = items.result.books
       this.books = items.result.books
       this.resources = items.result
-      console.log(this.resources);
     })
   }
 
   async deleteBook(bookId?: string){
     this.bookService.deleteBook(bookId).subscribe((item) => {
-      console.log(item);
       this.ngOnInit()
     })
   }
 
   editBook(){
-    console.log("EDIT BOOK");
   }
 }

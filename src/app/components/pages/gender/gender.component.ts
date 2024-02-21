@@ -18,11 +18,8 @@ export class GenderComponent  implements OnInit{
 
   ngOnInit(): void {
     this.genderService.getGenders().subscribe((items) => {
-        console.log(items);
         this.allGenders = items
         this.genders = items
-
-        console.log(this.genders);
     })
   }
 }

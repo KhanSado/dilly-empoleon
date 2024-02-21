@@ -32,7 +32,6 @@ export class PublisherFormComponent implements OnInit {
     if(this.publisherForm.invalid){
       return;
     }
-    console.log(this.publisherForm.value);
     Swal.fire({
       title: 'Nova Editora',
       text: 'Nova Editora adicionado com sucesso.',
