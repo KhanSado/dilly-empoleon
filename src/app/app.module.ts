@@ -26,6 +26,8 @@ import RegisterComponent from './demo/pages/authentication/register/register.com
 import { RegisterFormComponent } from './demo/pages/authentication/register/register-form/register-form.component';
 import { HomeComponent } from './demo/pages/internal/home/home.component';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { BookFormComponent } from './demo/pages/internal/books/book-form/book-form.component';
+import { NewBookComponent } from './demo/pages/internal/books/new-book/new-book.component';
 
 @NgModule({
   declarations: [

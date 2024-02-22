@@ -8,6 +8,7 @@ import { AuthorsComponent } from './demo/pages/internal/authors/authors.componen
 import { GenderComponent } from './demo/pages/internal/gender/gender.component';
 import { PublisherComponent } from './demo/pages/internal/publisher/publisher.component';
 import { ProfileComponent } from './demo/pages/internal/profile/profile.component';
+import { NewBookComponent } from './demo/pages/internal/books/new-book/new-book.component';
 
 
 const loadHome: () => Promise<typeof HomeComponent> = () =>
@@ -28,7 +29,8 @@ const loadHome: () => Promise<typeof HomeComponent> = () =>
   const loadProfile: () => Promise<typeof ProfileComponent> = () =>
   import('./demo/pages/internal/profile/profile.component').then((module) => module.ProfileComponent);
 
-
+  const loadBookRegister: () => Promise<typeof NewBookComponent> = () =>
+  import('./demo/pages/internal/books/new-book/new-book.component').then((module) => module.NewBookComponent);
 const routes: Routes = [
   {
     path: '',
@@ -66,6 +68,10 @@ const routes: Routes = [
       {
         path:'profile',
         loadComponent: () => loadProfile()
+      },
+      {
+        path: 'books/new',
+        loadComponent: () => loadBookRegister()
       },
       {
         path: 'typography',

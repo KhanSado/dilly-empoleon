@@ -41,15 +41,43 @@ const NavigationItems = [
         icon: 'ti ti-home',
         breadcrumbs: false
       },
+      // {
+      //   id: 'books',
+      //   title: 'livros',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '/books',
+      //   icon: 'ti ti-book',
+      //   breadcrumbs: false
+      // },
+
+      
       {
-        id: 'books',
-        title: 'livros',
-        type: 'item',
-        classes: 'nav-item',
+        id: 'book',
+        title: 'livro',
+        type: 'collapse',
         url: '/books',
         icon: 'ti ti-book',
-        breadcrumbs: false
-      },
+        children: [
+          {
+            id: 'myBooks',
+            title: 'meus livros',
+            type: 'item',
+            url: '/books',
+            breadcrumbs: true
+          },
+          {
+            id: 'registerBook',
+            title: 'novo livro',
+            type: 'item',
+            url: 'books/new',
+            breadcrumbs: true
+          }
+        ]
+
+  },
+
+
       {
         id: 'authors',
         title: 'autores',

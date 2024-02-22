@@ -1,0 +1,78 @@
+<form (ngSubmit)="submit()" [formGroup]="bookForm" #formDir = "ngForm">
+    <div class="form-group input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+      <input type="text" placeholder="Title" formControlName="title"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired/>
+    </div>
+    <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="title.errors?.['required']"> O title é obrigatório</p>
+    </div>
+  
+  
+    <div class="form-group input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Subtitle</span>
+      <input type="text" placeholder="Subtitle" formControlName="subtitle"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired>
+    </div>
+    <div *ngIf="subtitle.invalid && formDir.submitted" class="validation-error">
+    </div>
+  
+    <div class="form-group input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Sumary</span>
+      <input type="text" placeholder="Sumary" formControlName="sumary"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired>
+    </div>
+    <div *ngIf="sumary.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="sumary.errors?.['required']"> O sumary é obrigatório</p>
+    </div>
+  
+    <div class="form-group input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Author</span>
+      <select class="form-select" formControlName="author" aria-label="Default select example">
+        <option *ngFor="let author of authors" value={{author.id}}>{{author.name}} {{author.lastname}}</option>
+      </select>
+  
+      <span class="input-group-text" id="inputGroup-sizing-default">Gender</span>
+      <select class="form-select" formControlName="gender" aria-label="Default select example">
+        <option selected>Qual o genero do livro?</option>
+        <option *ngFor="let gender of genders" value={{gender.id}}>{{gender.name}}</option>
+      </select>
+  
+      <span class="input-group-text" id="inputGroup-sizing-default">Publisher</span>
+      <select class="form-select" formControlName="publisher" aria-label="Default select example">
+        <option selected>Editora do livro</option>
+        <option *ngFor="let publisher of publishers" value={{publisher.id}}>{{publisher.name}}</option>
+      </select>
+  
+    </div>
+  
+    <div class="form-group input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Leitura Finalizada?</span>
+      <select class="form-select" formControlName="readed" aria-label="Default select example">
+        <option value=true>Sim</option>
+        <option value=false>Não</option>
+      </select>
+  
+      <span class="input-group-text" id="inputGroup-sizing-default">Atualmente, esta lendo este livro?</span>
+      <select class="form-select" formControlName="isReading" aria-label="Default select example">
+        <option value=true>Sim</option>
+        <option value=false>Não</option>
+      </select>
+    </div>
+  
+  
+    <div class="form-group input-group mb-3">
+  
+      <span class="input-group-text" id="inputGroup-sizing-default">Quandidade de Páginas</span>
+      <input type="text" placeholder="Páginas" formControlName="qtdPages"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired/>
+  
+      <span class="input-group-text" id="inputGroup-sizing-default">Quantas vezes leu este livro?</span>
+      <input type="text" placeholder="Número de Leituras" formControlName="qtdRead"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired/>
+    </div>
+  
+    <div class="form-group input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Data da Ultima Leitura</span>
+      <input type="datetime-local" placeholder="DD/MM/YYYY" formControlName="lastRead"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" requeired>
+    </div>
+  
+    <div class="d-grid gap-2">
+      <input type="submit" class="btn btn-secondary" value="{{ btnText }}">
+    </div></form>
+  
