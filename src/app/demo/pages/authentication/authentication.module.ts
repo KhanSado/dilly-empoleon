@@ -5,11 +5,12 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import LoginComponent from './login/login.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
+import { IsLoggedDirective } from 'src/app/directives/is-logged.directive';
 
 @NgModule({
   declarations: [
-    // LoginFormComponent
+    // LoginFormComponent  
   ],
-  imports: [CommonModule, AuthenticationRoutingModule, ReactiveFormsModule, FormsModule, CommonModule, NgFor, NgIf]
+  imports: [CommonModule, AuthenticationRoutingModule, ReactiveFormsModule, FormsModule, CommonModule, NgFor, NgIf, ]
 })
 export class AuthenticationModule {}

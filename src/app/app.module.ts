@@ -28,6 +28,10 @@ import { HomeComponent } from './demo/pages/internal/home/home.component';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { BookFormComponent } from './demo/pages/internal/books/book-form/book-form.component';
 import { NewBookComponent } from './demo/pages/internal/books/new-book/new-book.component';
+import { IsLoggedDirective } from './directives/is-logged.directive';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthenticationModule } from './demo/pages/authentication/authentication.module';
+import { NgbAccordionBody, NgbAccordionButton, NgbAccordionCollapse, NgbAccordionConfig, NgbAccordionDirective, NgbAccordionHeader, NgbAccordionItem, NgbAccordionModule, NgbAccordionToggle } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -60,9 +64,36 @@ import { NewBookComponent } from './demo/pages/internal/books/new-book/new-book.
     FormsModule,
     CommonModule,
     NgIf, 
-    NgFor
+    NgFor,
+    NgbAccordionDirective,
+    NgbAccordionCollapse,
+    NgbAccordionModule,
+    NgbAccordionItem,
+    NgbAccordionButton,
+    NgbAccordionBody,
+    NgbAccordionHeader,
+    NgbAccordionToggle,
+    NgbAccordionBody,
+    NgbAccordionToggle,
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory
+      }
+    })
   ],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export function jwtOptionsFactory() {
+  return {
+    tokenGetter: () => {
+      // Implemente aqui a lógica para obter o token do usuário autenticado
+      return sessionStorage.getItem('x-dilly-token');
+    },
+    whitelistedDomains: ['api.example.com'],
+    blacklistedRoutes: ['api.example.com/login']
+  }
+}

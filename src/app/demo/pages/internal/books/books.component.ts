@@ -7,6 +7,7 @@ import { BookRoot } from 'src/app/models/BookRoot';
 import { BookService } from 'src/app/services/book.service';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { environment } from 'src/environments/environment';
+import { IsLoggedDirective } from 'src/app/directives/is-logged.directive';
 
 @Component({
   selector: 'app-books',

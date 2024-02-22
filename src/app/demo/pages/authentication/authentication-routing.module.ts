@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IsLoggedDirective } from 'src/app/directives/is-logged.directive';
 
 const routes: Routes = [
   {

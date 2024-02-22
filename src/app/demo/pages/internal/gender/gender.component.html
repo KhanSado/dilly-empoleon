@@ -1,1 +1,17 @@
-<p>gender works!</p>
+
+<div ngbAccordion>
+    <div ngbAccordionItem *ngFor="let gender of genders">
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton>{{gender.name}}</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template *ngFor="let book of gender.books">
+            
+            <p>{{book.title}}</p>
+
+          </ng-template>
+        </div>
+      </div>
+    </div>
+</div>
